@@ -1,0 +1,3 @@
+cd  F:\开发管理\svnFiles\prj_cloud3_tool\java\service_Subscriber\bin
+    java -Dfile.encoding=UTF-8 -classpath ".:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:$JRE_HOME:F:\开发管理\svnFiles\prj_cloud3_tool\java\service_Subscriber\jar\commons-pool-1.6.jar:F:\开发管理\svnFiles\prj_cloud3_tool\java\service_Subscriber\jar\hawtbuf-1.11.jar:F:\开发管理\svnFiles\prj_cloud3_tool\java\service_Subscriber\jar\jedis-2.1.0-new.jar:F:\开发管理\svnFiles\prj_cloud3_tool\java\service_Subscriber\jar\mysql-connector-java-5.1.7-bin.jar:F:\开发管理\svnFiles\prj_cloud3_tool\java\service_Subscriber\jar\org.apache.commons.logging_1.1.1.v201101211721.jar:F:\开发管理\svnFiles\prj_cloud3_tool\java\service_Subscriber\jar\org.apache.log4j_1.2.15.v201012070815.jar." service_Subscriber.main  
+    

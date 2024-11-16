@@ -1,0 +1,90 @@
+#/bin/bash
+#执行的java主程序
+#PROGRAM_NAME="service_Subscriber.main"
+#PROGRAM_TASK="service_Task.main"
+#PROGRAM_WEBSOCKET="service_Websocket.main"
+PROGRAM_NAME="main"
+#代码目录
+ROOT_PATH="/usr/local/cloudnetlot/www/service_Subscriber"
+#zhixing jiao ben mu lu
+BIN_PATH="$ROOT_PATH/bin"
+#日志文件路径
+LOG_PATH="$ROOT_PATH/log"
+#读取执行id
+tomcat_pid(){
+    echo `ps -ef | grep $1 | grep -v grep | tr -s " "|cut -d" " -f2`
+}
+
+startServer(){
+    pid=$(tomcat_pid $1)
+    currTime=$(date +%Y%m%d)
+    servername=${1%.*}
+
+    #logfile="$LOG_PATH/$servername$currTime.log"
+    if [ -n "$pid" ];then
+	echo -e "$servername is already running (pid: $pid)"
+    else
+	echo -e "Starting $servername"
+	#echo -e "$servername log is  ($logfile)"
+	cd "$BIN_PATH"
+	#nohup java -Dfile.encoding=UTF-8 -Duser.timezone=GMT+08 -classpath ".:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:$JRE_HOME:$ROOT_PATH/jar/slf4j-api-1.5.2.jar:$ROOT_PATH/jar/slf4j-simple-1.5.2.jar:$ROOT_PATH/jar/Java-WebSocket-1.5.2.jar:$ROOT_PATH/jar/commons-pool-1.6.jar:$ROOT_PATH/jar/commons-codec-1.15.jar:$ROOT_PATH/jar/hawtbuf-1.11.jar:$ROOT_PATH/jar/jedis-2.1.0-new.jar:$ROOT_PATH/jar/mysql-connector-java-5.1.7-bin.jar:$ROOT_PATH/jar/druid-1.1.10.jar:$ROOT_PATH/jar/org.apache.commons.logging_1.1.1.v201101211721.jar:$ROOT_PATH/jar/fastjson-1.2.83.jar:$ROOT_PATH/jar/org.apache.log4j_1.2.15.v201012070815.jar." "$1"   > /dev/null 2 > "$logfile" 2>&1 &
+	nohup java -Dfile.encoding=UTF-8 -Duser.timezone=GMT+08 -classpath ".:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:$JRE_HOME:$ROOT_PATH/jar/slf4j-api-1.5.2.jar:$ROOT_PATH/jar/org.apache.commons.logging_1.1.1.v201101211721.jar:$ROOT_PATH/jar/org.apache.log4j_1.2.15.v201012070815.jar:$ROOT_PATH/jar/slf4j-simple-1.5.2.jar:$ROOT_PATH/jar/Java-WebSocket-1.5.2.jar:$ROOT_PATH/jar/commons-pool-1.6.jar:$ROOT_PATH/jar/commons-codec-1.15.jar:$ROOT_PATH/jar/hawtbuf-1.11.jar:$ROOT_PATH/jar/jedis-2.1.0-new.jar:$ROOT_PATH/jar/mysql-connector-java-5.1.7-bin.jar:$ROOT_PATH/jar/druid-1.1.10.jar:$ROOT_PATH/jar/fastjson-1.2.83.jar" "$1"   > /dev/null 2>&1 &
+    fi
+    statusServer $1
+}
+
+statusServer(){
+    pid=$(tomcat_pid $1)
+    servername=${1%.*}
+    if [ -n "$pid" ];then
+	echo -e "$servername is running with pid: $pid"
+    else
+	echo -e "$servername  is not running"
+    fi
+}
+
+stopServer(){
+    pid=$(tomcat_pid $1)
+    servername=${1%.*}
+    if [ -n "$pid" ];then
+	echo -e "Stoping $servername"
+	kill -9 $pid
+    else
+	echo -e "$servername is not running"
+    fi
+}
+
+start(){
+    startServer $PROGRAM_NAME
+    #startServer $PROGRAM_TASK
+    #startServer $PROGRAM_WEBSOCKET
+}
+
+status(){
+    statusServer $PROGRAM_NAME
+    #statusServer $PROGRAM_TASK
+    #statusServer $PROGRAM_WEBSOCKET
+}
+
+stop(){
+    stopServer $PROGRAM_NAME
+    #stopServer $PROGRAM_TASK
+    #stopServer $PROGRAM_WEBSOCKET
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+	stop
+	;;
+    restart)
+	stop
+	start
+	;;
+    *)
+	echo "Please use start or stop or restart or status as first argument"
+	;;
+esac
+
