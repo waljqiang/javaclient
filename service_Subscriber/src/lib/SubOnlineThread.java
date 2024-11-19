@@ -4,6 +4,8 @@ import static org.fusesource.hawtbuf.Buffer.utf8;
 
 
 import java.net.URISyntaxException;
+
+import org.fusesource.hawtbuf.Buffer;
 import org.fusesource.hawtbuf.UTF8Buffer;
 import org.fusesource.mqtt.client.*;
 import conf.mqttConf;
@@ -11,7 +13,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 public class SubOnlineThread  extends Thread  {
-	private static final Log log = LogFactory.getLog(SubOnlineThread.class);	
+	private static final Log logger = LogFactory.getLog(SubOnlineThread.class);	
 	private String topic_str;
 	private QoS qos;
 
@@ -38,12 +40,12 @@ public class SubOnlineThread  extends Thread  {
 	  }
 	
 	public void run (){
-		log.fatal("subscribe_online_Thread start...");
+		logger.fatal("subscribe_online_Thread start...");
 	 	MQTT mqtt = new MQTT();
 	 	try {
 			mqtt.setHost(mqttConf.address,mqttConf.port);
 		} catch (URISyntaxException e) {
-			log.error(e.getMessage());
+			logger.error(e.getMessage());
 		}
 	 	mqtt.setUserName(mqttConf.username);
 	 	mqtt.setPassword(mqttConf.password);
@@ -52,35 +54,57 @@ public class SubOnlineThread  extends Thread  {
 	 	mqtt.setKeepAlive(mqttConf.keepalive);
 	 	
 	 	final CallbackConnection connection = mqtt.callbackConnection();
+          connection.listener(new org.fusesource.mqtt.client.Listener() {
+            
+            @Override
+            public void onConnected() {
+                logger.debug("Connected to MQTT broker");
+            }
+
+            @Override
+            public void onDisconnected() {
+            	 logger.debug("Disconnected from MQTT broker");
+            }
+
+            @Override
+            public void onPublish(UTF8Buffer topic, Buffer body, Runnable ack) {
+            	 logger.debug("Received message on topic: " + topic.toString() + " Message: " + new String(body.toByteArray()));
+                ack.run(); // 确认消息接收
+            }
+
+            @Override
+            public void onFailure(Throwable value) {
+            	 logger.debug("Connection failed: " + value.getMessage());
+            }
+        });
 	 	Topic[] topic = {new Topic(utf8(topic_str), qos)};
 	 	connection.connect(new Callback<Void>() {
             // Once we connect..
             public void onSuccess(Void v) {
-            	log.debug("mqtt online conn success");
+            	logger.debug("mqtt online conn success");
                 // Subscribe to dev2app           	
                 connection.subscribe(topic, new Callback<byte[]>() {
                     public void onSuccess(byte[] value) {
-                        // Once subscribed, publish a message on the same topic.
-                        //connection.publish("foo", "Hello".getBytes(), QoS.AT_LEAST_ONCE, false, null);
-                    	log.debug("mqtt subscribe "+topic_str+" success!");
-                    	log.fatal("subscribe_online_Thread start success");
+                       
+                    	logger.debug("mqtt subscribe "+topic_str+" success!");
+                    	logger.fatal("subscribe_online_Thread start success");
                     }
 
                     public void onFailure(Throwable value) {
                         connection.disconnect(null);	
-                        log.error("mqtt subscribe "+topic_str+" failure,to disconnect !!!,caused:"+value.getMessage());      
+                        logger.error("mqtt subscribe "+topic_str+" failure,to disconnect !!!,caused:"+value.getMessage());      
                     }
                 });
 
             }
 
             public void onFailure(Throwable value) {
-                log.error("mqtt online conn failure");
-                log.error("subscribe_online_Thread start failure");
+            	logger.error("mqtt online conn failure");
+            	logger.error("subscribe_online_Thread start failure");
             }
         });
-	 	ListenerOnlineThread listenMessageThr=new ListenerOnlineThread(connection);
-	 	listenMessageThr.setName("listenOnlineThr");
-    	listenMessageThr.start();
+	 	//ListenerOnlineThread listenMessageThr=new ListenerOnlineThread(connection);
+	 	//listenMessageThr.setName("listenOnlineThr");
+    	//listenMessageThr.start();
 	}
 }

@@ -34,5 +34,30 @@ public class deviceConf extends config{
 	public static final String STATUS_OFFLINE = "0";
 	public static final String STATUS_ONLINE = "1";
 	public static final String STATUS_ALARM = "2";
-	public static final int NTP_EXPIRE = Integer.parseInt(config.getIni("NTP_EXPIRE","600"));//ntp校准差，单位秒
+    public static final Boolean is_rebind = Boolean.parseBoolean(config.getIni("IS_REBIND","false"));
+    
+    public static final  String mark =  config.getIni("MARK","");
+    public static final  String dev_type =  config.getIni("DEV_TYPE","AX820");
+    
+    public static int encrypt = Integer.parseInt(config.getIni("ENCRYPT","1"));
+    
+    public static int bind = Integer.parseInt(config.getIni("REBIND","0"));
+    
+    public static String mac_start = config.getIni("MAC_START","66:D1:FF:00:00:01");
+    
+    public static int dev_nums = Integer.parseInt(config.getIni("DEV_NUMS","15000"));
+    
+    public static int report_start_time = Integer.parseInt(config.getIni("REPORT_START_TIME","1500"));
+    public static int dev_report_interval= Integer.parseInt(config.getIni("DEV_REPORT_INTERVAl","300"));
+   
+	public static final String gid =  config.getIni("G_ID","cnlwmnaxqkpembgjvmlyonzvrwdz");
+	public static final String prtid =  config.getIni("PRT_ID","prtdaxkypywtbwvarlgepmqvr");
+	
+    public static final String app_id = config.getIni("APP_ID","325986ac102df6261ca5fbfbc2aa3458");
+	
+    public static final String app_secret = config.getIni("APP_SECRET","fbcb84MxLNDndnWCWZ08TXIj9ePbBp8lHVp9rBXy");
+	
+	
+		
+		
 }

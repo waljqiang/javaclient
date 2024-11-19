@@ -23,13 +23,13 @@ public class ListenerOnlineThread extends Thread {
 	private String mac;
 	private Jedis jedis;
 	private RedisCache redisCache;
- 	private FrequenceOnOff frequenceOnOff;
+ 	//private FrequenceOnOff frequenceOnOff;
 	 
 	public ListenerOnlineThread(CallbackConnection con){ 
 		this.conn=con;
 		this.jedis = helperRedis.getJedis();
 		this.redisCache = new RedisCache();
-	 	this.frequenceOnOff = new FrequenceOnOff(this.redisCache);
+	 //	this.frequenceOnOff = new FrequenceOnOff(this.redisCache);
 	} 
 	 
 	public void run() {
@@ -43,7 +43,7 @@ public class ListenerOnlineThread extends Thread {
             }
 
             public void onPublish(UTF8Buffer topic, org.fusesource.hawtbuf.Buffer payload, Runnable onComplete){
-        		Date ldate = new Date();
+        		/*Date ldate = new Date();
          		Long time = ldate.getTime()/1000;
         		try{
         			String cltid = topic.toString().split("/")[4];
@@ -69,7 +69,7 @@ public class ListenerOnlineThread extends Thread {
         			}
         		}catch(Exception e){
         			
-        		}
+        		}*/
             }
 
             public void onFailure(Throwable value) {

@@ -11,4 +11,6 @@ public class mysqlConf extends config{
 	public static final String minIdle = config.getIni("MYSQL_POOL_MINIDLE","10");
 	public static final String maxActive = config.getIni("MYSQL_POOL_MAXACTIVE","100");
 	public static final String maxWait = config.getIni("MYSQL_POOL_MAXWAIT","5000");
+	
+	
 }
