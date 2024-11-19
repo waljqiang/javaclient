@@ -71,6 +71,7 @@ public class PerfThread  extends Thread  {
         }
 	}
 	
+	//对数据做转换 添加waittime
 	private void parseDevice(){
 		List<Integer> waittimes = new ArrayList<Integer>();
 		for(int i=0;i<this.devices.size();i++){
@@ -109,7 +110,7 @@ public class PerfThread  extends Thread  {
            	    device.setIdenty(String.valueOf(i));
            	    device.setPrtid((String) line.get("prtid"));
            	    device.setCltid((String) line.get("cltid"));
-           	    device.setMac((String) line.get("mac"));
+           	    device.setMac((String) line.get("dev_mac"));
            	    device.setType((String) line.get("type"));
            	    device.setBind((String) line.get("bind"));
            	    device.setMqtthost(mqttConf.address);
