@@ -49,7 +49,7 @@ public class DeviceReportApThread extends DeviceReportThread{
 	            @Override
 		        public void onSuccess(Void value) {
 		              // 消息发送成功时的回调
-		              logger.info("mqtt send message to device[" + device.getIdenty() + "][" + device.getMac() + "] success");
+		              logger.debug("mqtt send message to device[" + device.getIdenty() + "][" + device.getMac() + "] success");
 		         }
 				
 				@Override
