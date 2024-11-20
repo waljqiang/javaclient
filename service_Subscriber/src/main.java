@@ -13,7 +13,6 @@ public class main {
 		try {
 			PerfThread perft = new PerfThread();
 			perft.start();
-			
 			Thread.sleep(1000);
 		} catch (Exception e) {
 			

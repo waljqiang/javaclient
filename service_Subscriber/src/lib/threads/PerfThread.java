@@ -49,8 +49,10 @@ public class PerfThread  extends Thread  {
 				this.handleBinds(macs);
 				logger.debug("binding end");
 			}else{
+				logger.debug("initing start");
 				//初始化设备
 				this.initDevices(macs);
+				logger.debug("initing end");
 			}
 			
 		
@@ -76,7 +78,7 @@ public class PerfThread  extends Thread  {
 	private void parseDevice(){
 		List<Integer> waittimes = new ArrayList<Integer>();
 		for(int i=0;i<this.devices.size();i++){
-			waittimes.add((int)(Math.random()*(publicConf.report_start_time+1)));
+			waittimes.add((int)(Math.random()*(publicConf.report_start_time+1)/5));
 		}
 		Collections.sort(waittimes);
 
@@ -147,7 +149,7 @@ public class PerfThread  extends Thread  {
     * @param identity
     * @param mac
     */
-    public void handleBind(String identity, String mac) {
+    private void handleBind(String identity, String mac) {
         try {
             // 获取客户端信息
         	JSONObject clients = this.getClient(mac); 
@@ -168,7 +170,7 @@ public class PerfThread  extends Thread  {
     			device.setMqtthost(clients.getString("server"));
     			device.setMqttport(clients.getInteger("port"));
     			this.devices.add(device);
-                logger.fatal("bind device[" + identity + "][" + mac + "] ok");
+                logger.debug("bind device[" + identity + "][" + mac + "] ok");
             }
         } catch (Exception e) {
             // 处理异常情况
@@ -182,7 +184,7 @@ public class PerfThread  extends Thread  {
     * @param mac
     * @return
     */
-    public JSONObject getClient(String mac) {
+    private JSONObject getClient(String mac) {
     	 logger.debug("请求mac地址：："+mac);
         String url = publicConf.cloudnetlot_api_getclient;
         logger.debug("请求网址："+url);
@@ -212,7 +214,7 @@ public class PerfThread  extends Thread  {
      * @param mac 设备mac
      * @return 
      */
-	public String bindDevice(String mac){
+	private String bindDevice(String mac){
 		String bind = "";
 		if(this.token.isEmpty()){
 			this.generateToken();

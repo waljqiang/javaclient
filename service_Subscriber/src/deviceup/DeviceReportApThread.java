@@ -33,7 +33,7 @@ public class DeviceReportApThread extends DeviceReportThread{
 	
 	public void publishMessage() {
 		
-		logger.debug(device);
+		//logger.debug(device);
 		String message =  this.getMessage();
 		
 		if(device.getWaittime() != 0){

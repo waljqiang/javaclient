@@ -20,6 +20,6 @@ public class publicConf extends config{
 	//上报启动时间
 	public static final int report_start_time = Integer.parseInt(config.getIni("REPORT_START_TIME","3000"));
 	
-	//上报时间间隔
+	//每台上报时间间隔
 	public static final int report_interval = Integer.parseInt(config.getIni("REPORT_INTERVAL","300"));
 }

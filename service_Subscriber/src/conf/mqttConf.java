@@ -28,4 +28,9 @@ public class mqttConf extends config{
 	public static final QoS QoS_send = mqttConf.qos[Integer.parseInt(config.getIni("MQ_SEND_QOS","0"))];
 	public static final QoS QoS_sub = mqttConf.qos[Integer.parseInt(config.getIni("MQ_SUB_QOS","0"))];
 	public static final QoS QoS_auth = mqttConf.qos[Integer.parseInt(config.getIni("MQ_AUTH_QOS","0"))];
+	
+	
+	
+	
+	
 }
