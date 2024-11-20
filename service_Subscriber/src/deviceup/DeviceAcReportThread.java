@@ -10,19 +10,19 @@ public class DeviceAcReportThread extends DeviceReportThread{
 	
 	private static final Log logger = LogFactory.getLog(DeviceAcReportThread.class);
 	
-	public DeviceAcReportThread(Device device,int waittime){
-		super(device,waittime);
+	public DeviceAcReportThread(Device device){
+		super(device);
 	}
 	
 	public void run(){
-		if(waittime != 0){
+		/*if(waittime != 0){
 			try{
 				Thread.sleep(waittime * 1000);
 			}catch(Exception e){
 				logger.error("failure "+e.getMessage());
 			}
 		}
-		
+		*/
 		while(true){
 			String message = this.getMessage();
 //			try {
@@ -43,6 +43,11 @@ public class DeviceAcReportThread extends DeviceReportThread{
 
 	@Override
 	public String getBody() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public String getSystem(String mac, String type) {
 		// TODO Auto-generated method stub
 		return null;
 	}

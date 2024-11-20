@@ -35,24 +35,37 @@ public class deviceConf extends config{
 	public static final String STATUS_ONLINE = "1";
 	public static final String STATUS_ALARM = "2";
 	
+	//是否绑定
     public static final Boolean is_rebind = Boolean.parseBoolean(config.getIni("IS_REBIND","false"));
     
+    //备注
     public static final  String mark =  config.getIni("MARK","");
+    
+    //设备型号
     public static final  String dev_type =  config.getIni("DEV_TYPE","AX820");
     
     public static int encrypt = Integer.parseInt(config.getIni("ENCRYPT","1"));
     
-    public static int bind = Integer.parseInt(config.getIni("REBIND","0"));
+    //是否重新绑定
+    public static int rebind = Integer.parseInt(config.getIni("REBIND","0"));
     
+    
+    //起始mac
     public static String mac_start = config.getIni("MAC_START","66:D1:FF:00:00:01");
     
-    public static int dev_nums = Integer.parseInt(config.getIni("DEV_NUMS","15000"));
+    //绑定设备数量
+    public static int dev_nums = Integer.parseInt(config.getIni("DEV_NUMS","1"));
     
+    //云平台组id
 	public static final String gid =  config.getIni("G_ID","cnlwmnaxqkpembgjvmlyonzvrwdz");
+	
+	//产品id
 	public static final String prtid =  config.getIni("PRT_ID","prtdaxkypywtbwvarlgepmqvr");
 	
+	//开发者id
     public static final String app_id = config.getIni("APP_ID","325986ac102df6261ca5fbfbc2aa3458");
 	
+    //开发者秘钥
     public static final String app_secret = config.getIni("APP_SECRET","fbcb84MxLNDndnWCWZ08TXIj9ePbBp8lHVp9rBXy");
 	
 	

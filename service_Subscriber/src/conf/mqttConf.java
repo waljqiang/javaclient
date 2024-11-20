@@ -3,12 +3,16 @@ package conf;
 import org.fusesource.mqtt.client.QoS;
 
 public class mqttConf extends config{
+	
+	//mqtt相关配置
 	public static final String address = config.getIni("MQ_ADDRESS","127.0.0.1");
 	public static final Integer port = Integer.parseInt(config.getIni("MQ_PORT","1883"));
 	public static final String username = config.getIni("MQ_USERNAME","");
 	public static final String password = config.getIni("MQ_PASSWORD","");
 	public static final boolean clean = Boolean.parseBoolean(config.getIni("MQ_CLEAN","false"));
 	public static final Short keepalive = Short.parseShort(config.getIni("MQ_KEEP_ALIVE","300"));
+	
+	
 	//设备上行topic
 	public static final String TOPIC_DEV_APP = "$queue/+/+/dev2app";
 	//设备下行topic

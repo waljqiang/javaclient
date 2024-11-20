@@ -1,12 +1,11 @@
 package lib.threads;
 import lib.Helper;
 import lib.JdbcUtils;
-import lib.JdbcUtilsPool;
-import lib.MqttClientManager;
+
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.fusesource.mqtt.client.CallbackConnection;
+
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -22,10 +21,10 @@ import  conf.deviceConf;
 import conf.mqttConf;
 import conf.mysqlConf;
 import conf.publicConf;
-import conf.yunlotConf;
+
 import deviceup.Device;
-import deviceup.DeviceUpBase;
-import deviceup.DeviceUpThread;
+
+import deviceup.DeviceReportApThread;
 import deviceup.HttpRequest;
 
 public class PerfThread  extends Thread  {
@@ -50,15 +49,17 @@ public class PerfThread  extends Thread  {
 				this.handleBinds(macs);
 				logger.debug("binding end");
 			}else{
+				//初始化设备
 				this.initDevices(macs);
 			}
 			
-			//上报
+		
 			//parse device
 			this.parseDevice();
+			
 			//上报数据
 			for(Device device:this.devices){
-				DeviceUpThread deviceUpThr = new DeviceUpThread(device);
+				DeviceReportApThread deviceUpThr = new DeviceReportApThread(device);
 				deviceUpThr.start();
 			}
 			
@@ -86,6 +87,10 @@ public class PerfThread  extends Thread  {
 		
 	}
 	
+	/**
+	 * 初始化设备
+	 * @param macs
+	 */
 	private void initDevices(List<String> macs){
 		// 查询设备
 		String sql = "SELECT prtid, cltid, dev_mac, type, bind FROM " + mysqlConf.prefix + "device WHERE dev_mac IN (";
@@ -115,7 +120,6 @@ public class PerfThread  extends Thread  {
            	    device.setBind((String) line.get("bind"));
            	    device.setMqtthost(mqttConf.address);
            	    device.setMqttport(mqttConf.port);
-
            	    devices.add(device);
            	    i++;
            	} 
@@ -126,6 +130,10 @@ public class PerfThread  extends Thread  {
    	
 	}
 	
+	/**
+	 * 处理绑定设备
+	 * @param macs
+	 */
 	private void handleBinds(List<String> macs){
 		int i = 1;
         for (String mac : macs) {
@@ -134,7 +142,11 @@ public class PerfThread  extends Thread  {
         }
 	}
 	
-	 //绑定设备数据处理
+   /**
+    * 绑定设备数据处理
+    * @param identity
+    * @param mac
+    */
     public void handleBind(String identity, String mac) {
         try {
             // 获取客户端信息
@@ -143,7 +155,7 @@ public class PerfThread  extends Thread  {
             Thread.sleep(100); // Java中sleep的单位是毫秒
                    
            // 绑定设备
-             String bind = this.bindDevice(mac); // 
+            String bind = this.bindDevice(mac); 
             if (clients.isEmpty() || bind.isEmpty()) {
             	logger.error("bind device mac  is:" + mac + " bind failure");
             } else {
@@ -165,7 +177,11 @@ public class PerfThread  extends Thread  {
         }
     }
     
- // 获取客户端信息
+   /**
+    * 获取客户端信息
+    * @param mac
+    * @return
+    */
     public JSONObject getClient(String mac) {
     	 logger.debug("请求mac地址：："+mac);
         String url = publicConf.cloudnetlot_api_getclient;
@@ -191,9 +207,11 @@ public class PerfThread  extends Thread  {
         }
     }
     
-    /*
-	 * 绑定设备
-	 */
+    /**
+     *  绑定设备
+     * @param mac 设备mac
+     * @return 
+     */
 	public String bindDevice(String mac){
 		String bind = "";
 		if(this.token.isEmpty()){
@@ -223,7 +241,7 @@ public class PerfThread  extends Thread  {
 		return bind;
 	}
 	
-	/*
+	/**
 	 * 获取token
 	 */
 	private void generateToken(){

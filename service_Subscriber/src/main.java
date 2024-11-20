@@ -1,5 +1,5 @@
 //重要的类:
-import lib.*;
+
 import lib.threads.PerfThread;
 
 import org.apache.commons.logging.Log;
