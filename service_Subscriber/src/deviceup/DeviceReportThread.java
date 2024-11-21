@@ -35,7 +35,12 @@ public abstract class DeviceReportThread extends Thread{
 	 	mqtt.setClientId(this.device.getCltid());
 	 	mqtt.setCleanSession(mqttConf.clean);
 	 	mqtt.setKeepAlive(mqttConf.keepalive);
-	   
+	 	
+	 	//断连相关配置
+	    mqtt.setConnectAttemptsMax(mqttConf.set_conncet_attempts_max);
+	    mqtt.setReconnectAttemptsMax(mqttConf.set_reconnect_attempts_max);
+	    mqtt.setReconnectDelay(mqttConf.set_reconnect_delay);
+	    mqtt.setReconnectDelayMax(mqttConf.set_reconnect_delay_max);
 	 	
 	    this.connection = mqtt.callbackConnection();
 	 	

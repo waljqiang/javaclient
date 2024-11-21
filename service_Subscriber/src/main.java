@@ -15,7 +15,6 @@ public class main {
 			perft.start();
 			Thread.sleep(1000);
 		} catch (Exception e) {
-			
 			log.fatal("prossess failure:" + e.getMessage());
 		}
 	}

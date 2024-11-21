@@ -29,8 +29,11 @@ public class mqttConf extends config{
 	public static final QoS QoS_sub = mqttConf.qos[Integer.parseInt(config.getIni("MQ_SUB_QOS","0"))];
 	public static final QoS QoS_auth = mqttConf.qos[Integer.parseInt(config.getIni("MQ_AUTH_QOS","0"))];
 	
-	
-	
+	//断连相关配置
+	public static final Integer set_conncet_attempts_max= Integer.parseInt(config.getIni("SET_CONNECT_ATTEMPTS_MAX","-1"));
+	public static final Integer set_reconnect_attempts_max= Integer.parseInt(config.getIni("SET_RECONNECT_ATTEMPTS_MAX","-1"));
+    public static final Integer set_reconnect_delay= Integer.parseInt(config.getIni("SET_RECONNECT_DELAY","10"));
+	public static final Integer set_reconnect_delay_max= Integer.parseInt(config.getIni("SET_RECONNECT_DELAY_MAX","30000"));
 	
 	
 }
