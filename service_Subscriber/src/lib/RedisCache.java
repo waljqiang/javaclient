@@ -175,58 +175,11 @@ public class RedisCache{
 		return result;*/
 	}
 	
-	public Map<String,Object> getDeviceDynamic(String mac){
-		Jedis jedis = helperRedis.getJedis();
-		Map<String,Object> result = this.getDeviceDynamic(mac,jedis);
-		helperRedis.returnResource(jedis);
-		return result;
-	}
 	
-	public Map<String,Object> getDeviceDynamic(String mac,Jedis jedis){
-		String str = jedis.get(redisConf.DEVICE_DYNAMIC+mac);
-		Map<String,Object> result = new HashMap<String,Object>();
-		if(str != null){
-			result = JSON.parseObject(str,new TypeReference<HashMap<String,Object>>(){});
-			if(result.isEmpty()){
-				Map<String,Object> data = new HashMap<String,Object>();
-				data.put("cpu_use","0");
-				data.put("memory_use","0");
-				data.put("runtime","0");
-				data.put("status","0");
-				data.put("link","-1");
-				data.put("rssi","-1");
-				this.setDeviceDynamic(mac,data);
-				String status = data.get("status").toString();
-				if(status == null || status.equals(deviceConf.STATUS_OFFLINE)){
-					result.put("cpu_use","0");
-					result.put("memory_use","0");
-					result.put("status","0");
-					result.put("link","-1");
-					result.put("rssi","-1");
-				}
-			}
-		}
-		return result;
-	}
 	
-	public void setDeviceDynamic(String mac,Map<String,Object> data){
-		Jedis jedis = helperRedis.getJedis();
-		this.setDeviceDynamic(mac, data,jedis);
-		helperRedis.returnResource(jedis);
-	}
+
 	
-	public void setDeviceDynamic(String mac,Map<String,Object> data,Jedis jedis){
-		Map<String,Object> oldDynamic = this.getDeviceDynamic(mac,jedis);
-		if(oldDynamic == null || oldDynamic.isEmpty()){
-			jedis.set(redisConf.DEVICE_DYNAMIC+mac,JSON.toJSONString(data));
-		}else{
-			for(Map.Entry<String,Object> entry : data.entrySet()){
-				oldDynamic.put(entry.getKey(),entry.getValue());
-			}
-			jedis.set(redisConf.DEVICE_DYNAMIC+mac,JSON.toJSONString(oldDynamic));
-		}
-		//jedis.hmset(redisConf.DEVICE_DYNAMIC+mac,data);
-	}
+	
 	
 	public void setDeviceParams(String mac,String type,String value){
 		Jedis jedis = helperRedis.getJedis();
@@ -385,11 +338,7 @@ public class RedisCache{
 		jedis.hdel(redisConf.DEVICE_PARAMS+mac,type);
 	}
 	
-	public void parseDynamic(String mac,Map<String,String> value,Long time){
-		Jedis jedis = helperRedis.getJedis();
-		this.parseDynamic(mac, value, time, jedis);
-		helperRedis.returnResource(jedis);
-	}
+	
 	
 	public void parseDynamic(String mac,Map<String,String> value,Jedis jedis){
 		//更新cpu使用率、内存使用率、运行时间、设备状态
@@ -439,117 +388,7 @@ public class RedisCache{
 			jedis.set(redisConf.DEVICE_DYNAMIC+mac,JSON.toJSONString(data));
 	}
 	
-	public void parseDynamic(String mac,Map<String,String> value,Long time,Jedis jedis){
-		//更新cpu使用率、内存使用率、运行时间、设备状态
-		Map<String,Object> data = new HashMap<String,Object>();
-		Map<String,Object> oldCache = new HashMap<String,Object>();
-		String str = jedis.get(redisConf.DEVICE_DYNAMIC+mac);
-		if(str != null){
-			oldCache = JSON.parseObject(str,new TypeReference<HashMap<String,Object>>(){});
-			data = oldCache;
-		}
-		
-		String oldStatus = !oldCache.isEmpty() && oldCache.get("status") != null ? oldCache.get("status").toString() : "0";
-		String newStatus = value.get("status") == null ? oldStatus : value.get("status");
-		String cpu_use = value.get("cpu_use");
-		String memory_use = value.get("memory_use");
-		String runtime = value.get("runtime");
-		String parent = value.get("parent");
-		String link = value.get("link");
-		String rssi = value.get("rssi");
-		String ability = value.get("ability");
-		String alarmApp = value.get("alarm_app");
-		String alarmDev = value.get("alarm_dev");
-		String alarm = value.get("alarm");
-		if(ability != null && !ability.isEmpty()){
-			data.put("ability",JSON.parseArray(ability));
-		}
-		if(alarmApp != null){
-			data.put("alarm_app",alarmApp);
-		}
-		if(alarmDev != null){
-			data.put("alarm_dev",alarmDev);
-		}
-		if(alarm != null){
-			data.put("alarm", alarm);
-		}else{
-			if(alarmApp != null || alarmDev != null){
-				String oldAlarmapp = !oldCache.isEmpty() && oldCache.get("alarm_app") != null ? oldCache.get("alarm_app").toString() : "0";
-				String oldAlarmdev = !oldCache.isEmpty() && oldCache.get("alarm_dev") != null ? oldCache.get("alarm_dev").toString() : "0";
-				alarmApp = alarmApp != null ? alarmApp : oldAlarmapp;
-				alarmDev = alarmDev != null ? alarmDev : oldAlarmdev;
-				if(alarmApp.equals("1") || alarmDev.equals("1")){
-					data.put("alarm","1");
-				}else{
-					data.put("alarm","0");
-				}
-			}
-		}
-		if(oldStatus == null || oldStatus.equals(deviceConf.STATUS_OFFLINE)){
-			if(newStatus.equals(deviceConf.STATUS_OFFLINE)){//离线->离线
-				log.debug("handle "+mac+" status:offline------->offline");
-				if(runtime != null){
-					data.put("runtime",runtime);
-					data.put("cpu_use","0");
-					data.put("memory_use","0");
-					data.put("status",deviceConf.STATUS_OFFLINE);
-					data.put("offline_time",time.toString());
-				}
-			}else{//离线->在线
-				log.debug("handle "+mac+" status:offline------->online");
-				if(cpu_use != null){
-					data.put("cpu_use",cpu_use);
-				}
-				if(memory_use != null){
-					data.put("memory_use",memory_use);
-				}
-				if(runtime != null){
-					data.put("runtime",runtime);
-				}
-				data.put("status",newStatus);
-				data.put("online_time", time.toString());
-			}
-		}else{
-			if(newStatus.equals(deviceConf.STATUS_OFFLINE)){//在线->离线
-				log.debug("handle "+mac+" status:online------->offline");
-				if(runtime != null){
-					data.put("runtime",runtime);
-				}
-				data.put("cpu_use","0");
-				data.put("memory_use","0");
-				data.put("status",deviceConf.STATUS_OFFLINE);
-				data.put("offline_time",time.toString());
-			}else{//在线->在线
-				log.debug("handle "+mac+" status:online------->online");
-				if(cpu_use != null){
-					data.put("cpu_use",cpu_use);
-				}
-				if(memory_use != null){
-					data.put("memory_use",memory_use);
-				}
-				if(runtime != null){
-					data.put("runtime",runtime);
-				}
-				data.put("status",newStatus);
-			}
-			if(parent != null){
-				data.put("parent", parent);
-				if(link == null){
-					data.put("link","-1");
-				}else{
-					data.put("link", link);
-				}
-				if(rssi == null){
-					data.put("rssi","-1");
-				}else{
-					data.put("rssi",rssi);
-				}
-			}
-		}
-		if(!data.isEmpty())
-			jedis.set(redisConf.DEVICE_DYNAMIC+mac,JSON.toJSONString(data));
-	}
-	
+
 	public void updateOrderDeviceStatus(String orderID,Map<String,String> datas){
 		Jedis jedis = helperRedis.getJedis();
 		this.updateOrderDeviceStatus(orderID, datas,jedis);
