@@ -1,143 +1,23 @@
-[DEBUG] 2024-11-22 15:55:26 [Thread-0-0] [lib.threads.PerfThread.run(PerfThread.java:52)] initing start
-[INFO ] 2024-11-22 15:55:26 [Thread-0-148] [lib.JdbcUtils.findModeResult(JdbcUtils.java:159)] SELECT prtid, cltid, dev_mac, type, bind FROM cnl_device WHERE dev_mac IN (?,?,?,?,?,?,?,?,?,?) ORDER BY dev_mac ASC[BB:D1:FF:00:00:01, BB:D1:FF:00:00:02, BB:D1:FF:00:00:03, BB:D1:FF:00:00:04, BB:D1:FF:00:00:05, BB:D1:FF:00:00:06, BB:D1:FF:00:00:07, BB:D1:FF:00:00:08, BB:D1:FF:00:00:09, BB:D1:FF:00:00:0A]
-[DEBUG] 2024-11-22 15:55:26 [Thread-0-157] [lib.threads.PerfThread.run(PerfThread.java:55)] initing end
-[INFO ] 2024-11-22 15:55:27 [Thread-10-313] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[7][BB:D1:FF:00:00:07] success
-[INFO ] 2024-11-22 15:55:27 [Thread-5-313] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[2][BB:D1:FF:00:00:02] success
-[INFO ] 2024-11-22 15:55:27 [Thread-7-313] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[4][BB:D1:FF:00:00:04] success
-[INFO ] 2024-11-22 15:55:27 [Thread-9-313] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[6][BB:D1:FF:00:00:06] success
-[INFO ] 2024-11-22 15:55:27 [Thread-3-313] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[1][BB:D1:FF:00:00:01] success
-[INFO ] 2024-11-22 15:55:27 [Thread-6-313] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[3][BB:D1:FF:00:00:03] success
-[INFO ] 2024-11-22 15:55:27 [Thread-8-313] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[5][BB:D1:FF:00:00:05] success
-[FATAL] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-1-331] [deviceup.DeviceReportThread$2.onConnected(DeviceReportThread.java:74)] The device[BB:D1:FF:00:00:08] with mqtt connected
-[FATAL] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-2-332] [deviceup.DeviceReportThread$2.onConnected(DeviceReportThread.java:74)] The device[BB:D1:FF:00:00:01] with mqtt connected
-[FATAL] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-9-332] [deviceup.DeviceReportThread$2.onConnected(DeviceReportThread.java:74)] The device[BB:D1:FF:00:00:09] with mqtt connected
-[FATAL] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-1-332] [deviceup.DeviceReportThread$2.onConnected(DeviceReportThread.java:74)] The device[BB:D1:FF:00:00:05] with mqtt connected
-[FATAL] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-8-332] [deviceup.DeviceReportThread$2.onConnected(DeviceReportThread.java:74)] The device[BB:D1:FF:00:00:02] with mqtt connected
-[FATAL] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-6-332] [deviceup.DeviceReportThread$2.onConnected(DeviceReportThread.java:74)] The device[BB:D1:FF:00:00:06] with mqtt connected
-[FATAL] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-4-332] [deviceup.DeviceReportThread$2.onConnected(DeviceReportThread.java:74)] The device[BB:D1:FF:00:00:0A] with mqtt connected
-[FATAL] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-5-332] [deviceup.DeviceReportThread$2.onConnected(DeviceReportThread.java:74)] The device[BB:D1:FF:00:00:03] with mqtt connected
-[FATAL] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-7-332] [deviceup.DeviceReportThread$2.onConnected(DeviceReportThread.java:74)] The device[BB:D1:FF:00:00:04] with mqtt connected
-[FATAL] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-3-332] [deviceup.DeviceReportThread$2.onConnected(DeviceReportThread.java:74)] The device[BB:D1:FF:00:00:07] with mqtt connected
-[DEBUG] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-1-334] [deviceup.DeviceReportThread$1$1.onSuccess(DeviceReportThread.java:56)] The device[BB:D1:FF:00:00:08] with mqtt subscribe prtdaxkypywtbwvarlgepmqvr/cltrwxjsoukdz5z930zv8s0yd16kyq/dev2app success!
-[DEBUG] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-1-335] [deviceup.DeviceReportThread$1$1.onSuccess(DeviceReportThread.java:56)] The device[BB:D1:FF:00:00:09] with mqtt subscribe prtdaxkypywtbwvarlgepmqvr/clt7n0zsyuzep8p36dpv1fdm0zr9kq/dev2app success!
-[DEBUG] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-1-335] [deviceup.DeviceReportThread$1$1.onSuccess(DeviceReportThread.java:56)] The device[BB:D1:FF:00:00:0A] with mqtt subscribe prtdaxkypywtbwvarlgepmqvr/cltonkksdugmd0devjd51bx2z461pn/dev2app success!
-[DEBUG] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-1-338] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[1][BB:D1:FF:00:00:01] success
-[DEBUG] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-1-338] [deviceup.DeviceReportThread$1$1.onSuccess(DeviceReportThread.java:56)] The device[BB:D1:FF:00:00:01] with mqtt subscribe prtdaxkypywtbwvarlgepmqvr/cltjq3zsvuplovogz4o7ofxgyol18w/dev2app success!
-[DEBUG] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-3-338] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[6][BB:D1:FF:00:00:06] success
-[DEBUG] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-1-338] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[5][BB:D1:FF:00:00:05] success
-[DEBUG] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-5-338] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[2][BB:D1:FF:00:00:02] success
-[DEBUG] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-4-338] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[4][BB:D1:FF:00:00:04] success
-[DEBUG] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-2-338] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[3][BB:D1:FF:00:00:03] success
-[DEBUG] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-2-339] [deviceup.DeviceReportThread$1$1.onSuccess(DeviceReportThread.java:56)] The device[BB:D1:FF:00:00:03] with mqtt subscribe prtdaxkypywtbwvarlgepmqvr/clt5w8js7u967y71pg78zu8034j75n/dev2app success!
-[DEBUG] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-4-339] [deviceup.DeviceReportThread$1$1.onSuccess(DeviceReportThread.java:56)] The device[BB:D1:FF:00:00:04] with mqtt subscribe prtdaxkypywtbwvarlgepmqvr/cltdn2ds8uzomdmv89mr9h5962l10q/dev2app success!
-[DEBUG] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-1-339] [deviceup.DeviceReportThread$1$1.onSuccess(DeviceReportThread.java:56)] The device[BB:D1:FF:00:00:05] with mqtt subscribe prtdaxkypywtbwvarlgepmqvr/clt3qo1sruymxlx90jxo6t1ylm567n/dev2app success!
-[DEBUG] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-6-339] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[7][BB:D1:FF:00:00:07] success
-[DEBUG] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-5-339] [deviceup.DeviceReportThread$1$1.onSuccess(DeviceReportThread.java:56)] The device[BB:D1:FF:00:00:02] with mqtt subscribe prtdaxkypywtbwvarlgepmqvr/clt9qyrsxu089g9jmx9ppfg438l5dw/dev2app success!
-[DEBUG] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-3-338] [deviceup.DeviceReportThread$1$1.onSuccess(DeviceReportThread.java:56)] The device[BB:D1:FF:00:00:06] with mqtt subscribe prtdaxkypywtbwvarlgepmqvr/clt2n54s5u81lxlp9yld7sz7kvyerq/dev2app success!
-[DEBUG] 2024-11-22 15:55:27 [hawtdispatch-DEFAULT-6-340] [deviceup.DeviceReportThread$1$1.onSuccess(DeviceReportThread.java:56)] The device[BB:D1:FF:00:00:07] with mqtt subscribe prtdaxkypywtbwvarlgepmqvr/cltdwdrsrudpgjgxr1gyzs90vd6g0n/dev2app success!
-[INFO ] 2024-11-22 15:55:28 [Thread-11-1322] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[8][BB:D1:FF:00:00:08] success
-[INFO ] 2024-11-22 15:55:28 [Thread-13-1322] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[10][BB:D1:FF:00:00:0A] success
-[INFO ] 2024-11-22 15:55:28 [Thread-12-1322] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[9][BB:D1:FF:00:00:09] success
-[DEBUG] 2024-11-22 15:55:28 [hawtdispatch-DEFAULT-1-1328] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[10][BB:D1:FF:00:00:0A] success
-[DEBUG] 2024-11-22 15:55:28 [hawtdispatch-DEFAULT-3-1329] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[8][BB:D1:FF:00:00:08] success
-[DEBUG] 2024-11-22 15:55:28 [hawtdispatch-DEFAULT-1-1329] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[9][BB:D1:FF:00:00:09] success
-[INFO ] 2024-11-22 15:55:37 [Thread-3-10319] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[1][BB:D1:FF:00:00:01] success
-[INFO ] 2024-11-22 15:55:37 [Thread-7-10320] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[4][BB:D1:FF:00:00:04] success
-[INFO ] 2024-11-22 15:55:37 [Thread-6-10319] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[3][BB:D1:FF:00:00:03] success
-[INFO ] 2024-11-22 15:55:37 [Thread-8-10319] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[5][BB:D1:FF:00:00:05] success
-[INFO ] 2024-11-22 15:55:37 [Thread-5-10319] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[2][BB:D1:FF:00:00:02] success
-[INFO ] 2024-11-22 15:55:37 [Thread-10-10319] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[7][BB:D1:FF:00:00:07] success
-[INFO ] 2024-11-22 15:55:37 [Thread-9-10321] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[6][BB:D1:FF:00:00:06] success
-[DEBUG] 2024-11-22 15:55:37 [hawtdispatch-DEFAULT-1-10324] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[2][BB:D1:FF:00:00:02] success
-[DEBUG] 2024-11-22 15:55:37 [hawtdispatch-DEFAULT-2-10325] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[1][BB:D1:FF:00:00:01] success
-[DEBUG] 2024-11-22 15:55:37 [hawtdispatch-DEFAULT-1-10325] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[5][BB:D1:FF:00:00:05] success
-[DEBUG] 2024-11-22 15:55:37 [hawtdispatch-DEFAULT-6-10325] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[4][BB:D1:FF:00:00:04] success
-[DEBUG] 2024-11-22 15:55:37 [hawtdispatch-DEFAULT-5-10325] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[6][BB:D1:FF:00:00:06] success
-[DEBUG] 2024-11-22 15:55:37 [hawtdispatch-DEFAULT-4-10325] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[3][BB:D1:FF:00:00:03] success
-[DEBUG] 2024-11-22 15:55:37 [hawtdispatch-DEFAULT-3-10325] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[7][BB:D1:FF:00:00:07] success
-[INFO ] 2024-11-22 15:55:38 [Thread-12-11331] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[9][BB:D1:FF:00:00:09] success
-[INFO ] 2024-11-22 15:55:38 [Thread-13-11331] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[10][BB:D1:FF:00:00:0A] success
-[INFO ] 2024-11-22 15:55:38 [Thread-11-11331] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[8][BB:D1:FF:00:00:08] success
-[DEBUG] 2024-11-22 15:55:38 [hawtdispatch-DEFAULT-1-11336] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[10][BB:D1:FF:00:00:0A] success
-[DEBUG] 2024-11-22 15:55:38 [hawtdispatch-DEFAULT-2-11337] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[8][BB:D1:FF:00:00:08] success
-[DEBUG] 2024-11-22 15:55:38 [hawtdispatch-DEFAULT-1-11337] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[9][BB:D1:FF:00:00:09] success
-[INFO ] 2024-11-22 15:55:47 [Thread-3-20332] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[1][BB:D1:FF:00:00:01] success
-[INFO ] 2024-11-22 15:55:47 [Thread-9-20332] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[6][BB:D1:FF:00:00:06] success
-[INFO ] 2024-11-22 15:55:47 [Thread-10-20332] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[7][BB:D1:FF:00:00:07] success
-[INFO ] 2024-11-22 15:55:47 [Thread-7-20332] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[4][BB:D1:FF:00:00:04] success
-[INFO ] 2024-11-22 15:55:47 [Thread-6-20332] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[3][BB:D1:FF:00:00:03] success
-[INFO ] 2024-11-22 15:55:47 [Thread-8-20332] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[5][BB:D1:FF:00:00:05] success
-[INFO ] 2024-11-22 15:55:47 [Thread-5-20332] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[2][BB:D1:FF:00:00:02] success
-[DEBUG] 2024-11-22 15:55:47 [hawtdispatch-DEFAULT-1-20336] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[4][BB:D1:FF:00:00:04] success
-[DEBUG] 2024-11-22 15:55:47 [hawtdispatch-DEFAULT-3-20338] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[7][BB:D1:FF:00:00:07] success
-[DEBUG] 2024-11-22 15:55:47 [hawtdispatch-DEFAULT-1-20338] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[2][BB:D1:FF:00:00:02] success
-[DEBUG] 2024-11-22 15:55:47 [hawtdispatch-DEFAULT-6-20338] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[5][BB:D1:FF:00:00:05] success
-[DEBUG] 2024-11-22 15:55:47 [hawtdispatch-DEFAULT-5-20338] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[6][BB:D1:FF:00:00:06] success
-[DEBUG] 2024-11-22 15:55:47 [hawtdispatch-DEFAULT-2-20338] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[1][BB:D1:FF:00:00:01] success
-[DEBUG] 2024-11-22 15:55:47 [hawtdispatch-DEFAULT-4-20338] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[3][BB:D1:FF:00:00:03] success
-[INFO ] 2024-11-22 15:55:48 [Thread-12-21335] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[9][BB:D1:FF:00:00:09] success
-[INFO ] 2024-11-22 15:55:48 [Thread-13-21336] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[10][BB:D1:FF:00:00:0A] success
-[INFO ] 2024-11-22 15:55:48 [Thread-11-21336] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[8][BB:D1:FF:00:00:08] success
-[DEBUG] 2024-11-22 15:55:48 [hawtdispatch-DEFAULT-1-21341] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[9][BB:D1:FF:00:00:09] success
-[DEBUG] 2024-11-22 15:55:48 [hawtdispatch-DEFAULT-1-21342] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[8][BB:D1:FF:00:00:08] success
-[DEBUG] 2024-11-22 15:55:48 [hawtdispatch-DEFAULT-2-21342] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[10][BB:D1:FF:00:00:0A] success
-[INFO ] 2024-11-22 15:55:57 [Thread-9-30346] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[6][BB:D1:FF:00:00:06] success
-[INFO ] 2024-11-22 15:55:57 [Thread-5-30346] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[2][BB:D1:FF:00:00:02] success
-[INFO ] 2024-11-22 15:55:57 [Thread-10-30346] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[7][BB:D1:FF:00:00:07] success
-[INFO ] 2024-11-22 15:55:57 [Thread-3-30346] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[1][BB:D1:FF:00:00:01] success
-[INFO ] 2024-11-22 15:55:57 [Thread-7-30346] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[4][BB:D1:FF:00:00:04] success
-[INFO ] 2024-11-22 15:55:57 [Thread-8-30346] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[5][BB:D1:FF:00:00:05] success
-[INFO ] 2024-11-22 15:55:57 [Thread-6-30346] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[3][BB:D1:FF:00:00:03] success
-[DEBUG] 2024-11-22 15:55:57 [hawtdispatch-DEFAULT-1-30351] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[7][BB:D1:FF:00:00:07] success
-[DEBUG] 2024-11-22 15:55:57 [hawtdispatch-DEFAULT-2-30352] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[1][BB:D1:FF:00:00:01] success
-[DEBUG] 2024-11-22 15:55:57 [hawtdispatch-DEFAULT-6-30352] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[5][BB:D1:FF:00:00:05] success
-[DEBUG] 2024-11-22 15:55:57 [hawtdispatch-DEFAULT-1-30352] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[2][BB:D1:FF:00:00:02] success
-[DEBUG] 2024-11-22 15:55:57 [hawtdispatch-DEFAULT-5-30352] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[4][BB:D1:FF:00:00:04] success
-[DEBUG] 2024-11-22 15:55:57 [hawtdispatch-DEFAULT-4-30352] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[6][BB:D1:FF:00:00:06] success
-[DEBUG] 2024-11-22 15:55:57 [hawtdispatch-DEFAULT-3-30352] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[3][BB:D1:FF:00:00:03] success
-[INFO ] 2024-11-22 15:55:58 [Thread-12-31342] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[9][BB:D1:FF:00:00:09] success
-[INFO ] 2024-11-22 15:55:58 [Thread-11-31342] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[8][BB:D1:FF:00:00:08] success
-[INFO ] 2024-11-22 15:55:58 [Thread-13-31342] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[10][BB:D1:FF:00:00:0A] success
-[DEBUG] 2024-11-22 15:55:58 [hawtdispatch-DEFAULT-1-31348] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[9][BB:D1:FF:00:00:09] success
-[DEBUG] 2024-11-22 15:55:58 [hawtdispatch-DEFAULT-2-31349] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[10][BB:D1:FF:00:00:0A] success
-[DEBUG] 2024-11-22 15:55:58 [hawtdispatch-DEFAULT-1-31349] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[8][BB:D1:FF:00:00:08] success
-[INFO ] 2024-11-22 15:56:07 [Thread-5-40354] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[2][BB:D1:FF:00:00:02] success
-[INFO ] 2024-11-22 15:56:07 [Thread-10-40354] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[7][BB:D1:FF:00:00:07] success
-[INFO ] 2024-11-22 15:56:07 [Thread-9-40354] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[6][BB:D1:FF:00:00:06] success
-[INFO ] 2024-11-22 15:56:07 [Thread-3-40354] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[1][BB:D1:FF:00:00:01] success
-[INFO ] 2024-11-22 15:56:07 [Thread-8-40354] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[5][BB:D1:FF:00:00:05] success
-[INFO ] 2024-11-22 15:56:07 [Thread-7-40354] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[4][BB:D1:FF:00:00:04] success
-[INFO ] 2024-11-22 15:56:07 [Thread-6-40354] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[3][BB:D1:FF:00:00:03] success
-[DEBUG] 2024-11-22 15:56:07 [hawtdispatch-DEFAULT-1-40359] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[2][BB:D1:FF:00:00:02] success
-[DEBUG] 2024-11-22 15:56:07 [hawtdispatch-DEFAULT-2-40360] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[1][BB:D1:FF:00:00:01] success
-[DEBUG] 2024-11-22 15:56:07 [hawtdispatch-DEFAULT-5-40360] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[6][BB:D1:FF:00:00:06] success
-[DEBUG] 2024-11-22 15:56:07 [hawtdispatch-DEFAULT-1-40360] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[5][BB:D1:FF:00:00:05] success
-[DEBUG] 2024-11-22 15:56:07 [hawtdispatch-DEFAULT-6-40360] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[4][BB:D1:FF:00:00:04] success
-[DEBUG] 2024-11-22 15:56:07 [hawtdispatch-DEFAULT-4-40360] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[7][BB:D1:FF:00:00:07] success
-[DEBUG] 2024-11-22 15:56:07 [hawtdispatch-DEFAULT-3-40360] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[3][BB:D1:FF:00:00:03] success
-[INFO ] 2024-11-22 15:56:08 [Thread-12-41348] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[9][BB:D1:FF:00:00:09] success
-[INFO ] 2024-11-22 15:56:08 [Thread-13-41348] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[10][BB:D1:FF:00:00:0A] success
-[INFO ] 2024-11-22 15:56:08 [Thread-11-41348] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[8][BB:D1:FF:00:00:08] success
-[DEBUG] 2024-11-22 15:56:08 [hawtdispatch-DEFAULT-1-41354] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[9][BB:D1:FF:00:00:09] success
-[DEBUG] 2024-11-22 15:56:08 [hawtdispatch-DEFAULT-2-41355] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[10][BB:D1:FF:00:00:0A] success
-[DEBUG] 2024-11-22 15:56:08 [hawtdispatch-DEFAULT-1-41355] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[8][BB:D1:FF:00:00:08] success
-[INFO ] 2024-11-22 15:56:17 [Thread-5-50369] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[2][BB:D1:FF:00:00:02] success
-[INFO ] 2024-11-22 15:56:17 [Thread-3-50369] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[1][BB:D1:FF:00:00:01] success
-[INFO ] 2024-11-22 15:56:17 [Thread-9-50369] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[6][BB:D1:FF:00:00:06] success
-[INFO ] 2024-11-22 15:56:17 [Thread-6-50369] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[3][BB:D1:FF:00:00:03] success
-[INFO ] 2024-11-22 15:56:17 [Thread-7-50369] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[4][BB:D1:FF:00:00:04] success
-[INFO ] 2024-11-22 15:56:17 [Thread-10-50369] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[7][BB:D1:FF:00:00:07] success
-[INFO ] 2024-11-22 15:56:17 [Thread-8-50369] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[5][BB:D1:FF:00:00:05] success
-[DEBUG] 2024-11-22 15:56:17 [hawtdispatch-DEFAULT-1-50374] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[4][BB:D1:FF:00:00:04] success
-[DEBUG] 2024-11-22 15:56:17 [hawtdispatch-DEFAULT-2-50374] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[1][BB:D1:FF:00:00:01] success
-[DEBUG] 2024-11-22 15:56:17 [hawtdispatch-DEFAULT-1-50374] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[2][BB:D1:FF:00:00:02] success
-[DEBUG] 2024-11-22 15:56:17 [hawtdispatch-DEFAULT-4-50374] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[6][BB:D1:FF:00:00:06] success
-[DEBUG] 2024-11-22 15:56:17 [hawtdispatch-DEFAULT-3-50374] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[3][BB:D1:FF:00:00:03] success
-[DEBUG] 2024-11-22 15:56:17 [hawtdispatch-DEFAULT-2-50374] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[7][BB:D1:FF:00:00:07] success
-[DEBUG] 2024-11-22 15:56:17 [hawtdispatch-DEFAULT-1-50374] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[5][BB:D1:FF:00:00:05] success
-[INFO ] 2024-11-22 15:56:18 [Thread-13-51364] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[10][BB:D1:FF:00:00:0A] success
-[INFO ] 2024-11-22 15:56:18 [Thread-12-51364] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[9][BB:D1:FF:00:00:09] success
-[INFO ] 2024-11-22 15:56:18 [Thread-11-51364] [deviceup.DeviceReportApThread.publishMessage(DeviceReportApThread.java:56)] mqtt send message to device[8][BB:D1:FF:00:00:08] success
-[DEBUG] 2024-11-22 15:56:18 [hawtdispatch-DEFAULT-1-51368] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[10][BB:D1:FF:00:00:0A] success
-[DEBUG] 2024-11-22 15:56:18 [hawtdispatch-DEFAULT-2-51369] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[8][BB:D1:FF:00:00:08] success
-[DEBUG] 2024-11-22 15:56:18 [hawtdispatch-DEFAULT-1-51369] [deviceup.DeviceReportApThread$1.onSuccess(DeviceReportApThread.java:45)] mqtt send message to device[9][BB:D1:FF:00:00:09] success
+[DEBUG] 2024-11-22 16:02:36 [Thread-0-0] [lib.threads.PerfThread.run(PerfThread.java:52)] initing start
+[INFO ] 2024-11-22 16:02:36 [Thread-0-170] [lib.JdbcUtils.findModeResult(JdbcUtils.java:159)] SELECT prtid, cltid, dev_mac, type, bind FROM cnl_device WHERE dev_mac IN (?,?,?,?,?,?,?,?,?,?) ORDER BY dev_mac ASC[BB:D1:FF:00:00:01, BB:D1:FF:00:00:02, BB:D1:FF:00:00:03, BB:D1:FF:00:00:04, BB:D1:FF:00:00:05, BB:D1:FF:00:00:06, BB:D1:FF:00:00:07, BB:D1:FF:00:00:08, BB:D1:FF:00:00:09, BB:D1:FF:00:00:0A]
+[DEBUG] 2024-11-22 16:02:36 [Thread-0-179] [lib.threads.PerfThread.run(PerfThread.java:55)] initing end
+[FATAL] 2024-11-22 16:02:36 [hawtdispatch-DEFAULT-1-368] [deviceup.DeviceReportThread$2.onConnected(DeviceReportThread.java:74)] The device[BB:D1:FF:00:00:07] with mqtt connected
+[FATAL] 2024-11-22 16:02:36 [hawtdispatch-DEFAULT-2-369] [deviceup.DeviceReportThread$2.onConnected(DeviceReportThread.java:74)] The device[BB:D1:FF:00:00:09] with mqtt connected
+[FATAL] 2024-11-22 16:02:36 [hawtdispatch-DEFAULT-9-369] [deviceup.DeviceReportThread$2.onConnected(DeviceReportThread.java:74)] The device[BB:D1:FF:00:00:06] with mqtt connected
+[FATAL] 2024-11-22 16:02:36 [hawtdispatch-DEFAULT-8-369] [deviceup.DeviceReportThread$2.onConnected(DeviceReportThread.java:74)] The device[BB:D1:FF:00:00:03] with mqtt connected
+[FATAL] 2024-11-22 16:02:36 [hawtdispatch-DEFAULT-1-369] [deviceup.DeviceReportThread$2.onConnected(DeviceReportThread.java:74)] The device[BB:D1:FF:00:00:01] with mqtt connected
+[FATAL] 2024-11-22 16:02:36 [hawtdispatch-DEFAULT-6-369] [deviceup.DeviceReportThread$2.onConnected(DeviceReportThread.java:74)] The device[BB:D1:FF:00:00:02] with mqtt connected
+[FATAL] 2024-11-22 16:02:36 [hawtdispatch-DEFAULT-7-369] [deviceup.DeviceReportThread$2.onConnected(DeviceReportThread.java:74)] The device[BB:D1:FF:00:00:04] with mqtt connected
+[FATAL] 2024-11-22 16:02:36 [hawtdispatch-DEFAULT-5-369] [deviceup.DeviceReportThread$2.onConnected(DeviceReportThread.java:74)] The device[BB:D1:FF:00:00:05] with mqtt connected
+[FATAL] 2024-11-22 16:02:36 [hawtdispatch-DEFAULT-4-369] [deviceup.DeviceReportThread$2.onConnected(DeviceReportThread.java:74)] The device[BB:D1:FF:00:00:08] with mqtt connected
+[FATAL] 2024-11-22 16:02:36 [hawtdispatch-DEFAULT-3-369] [deviceup.DeviceReportThread$2.onConnected(DeviceReportThread.java:74)] The device[BB:D1:FF:00:00:0A] with mqtt connected
+[DEBUG] 2024-11-22 16:02:36 [hawtdispatch-DEFAULT-1-372] [deviceup.DeviceReportThread$1$1.onSuccess(DeviceReportThread.java:56)] The device[BB:D1:FF:00:00:07] with mqtt subscribe prtdaxkypywtbwvarlgepmqvr/cltdwdrsrudpgjgxr1gyzs90vd6g0n/dev2app success!
+[DEBUG] 2024-11-22 16:02:36 [hawtdispatch-DEFAULT-2-372] [deviceup.DeviceReportThread$1$1.onSuccess(DeviceReportThread.java:56)] The device[BB:D1:FF:00:00:09] with mqtt subscribe prtdaxkypywtbwvarlgepmqvr/clt7n0zsyuzep8p36dpv1fdm0zr9kq/dev2app success!
+[DEBUG] 2024-11-22 16:02:36 [hawtdispatch-DEFAULT-1-372] [deviceup.DeviceReportThread$1$1.onSuccess(DeviceReportThread.java:56)] The device[BB:D1:FF:00:00:06] with mqtt subscribe prtdaxkypywtbwvarlgepmqvr/clt2n54s5u81lxlp9yld7sz7kvyerq/dev2app success!
+[DEBUG] 2024-11-22 16:02:36 [hawtdispatch-DEFAULT-3-373] [deviceup.DeviceReportThread$1$1.onSuccess(DeviceReportThread.java:56)] The device[BB:D1:FF:00:00:05] with mqtt subscribe prtdaxkypywtbwvarlgepmqvr/clt3qo1sruymxlx90jxo6t1ylm567n/dev2app success!
+[DEBUG] 2024-11-22 16:02:36 [hawtdispatch-DEFAULT-1-373] [deviceup.DeviceReportThread$1$1.onSuccess(DeviceReportThread.java:56)] The device[BB:D1:FF:00:00:01] with mqtt subscribe prtdaxkypywtbwvarlgepmqvr/cltjq3zsvuplovogz4o7ofxgyol18w/dev2app success!
+[DEBUG] 2024-11-22 16:02:36 [hawtdispatch-DEFAULT-6-373] [deviceup.DeviceReportThread$1$1.onSuccess(DeviceReportThread.java:56)] The device[BB:D1:FF:00:00:03] with mqtt subscribe prtdaxkypywtbwvarlgepmqvr/clt5w8js7u967y71pg78zu8034j75n/dev2app success!
+[DEBUG] 2024-11-22 16:02:36 [hawtdispatch-DEFAULT-5-373] [deviceup.DeviceReportThread$1$1.onSuccess(DeviceReportThread.java:56)] The device[BB:D1:FF:00:00:04] with mqtt subscribe prtdaxkypywtbwvarlgepmqvr/cltdn2ds8uzomdmv89mr9h5962l10q/dev2app success!
+[DEBUG] 2024-11-22 16:02:36 [hawtdispatch-DEFAULT-4-373] [deviceup.DeviceReportThread$1$1.onSuccess(DeviceReportThread.java:56)] The device[BB:D1:FF:00:00:02] with mqtt subscribe prtdaxkypywtbwvarlgepmqvr/clt9qyrsxu089g9jmx9ppfg438l5dw/dev2app success!
+[DEBUG] 2024-11-22 16:02:36 [hawtdispatch-DEFAULT-2-373] [deviceup.DeviceReportThread$1$1.onSuccess(DeviceReportThread.java:56)] The device[BB:D1:FF:00:00:08] with mqtt subscribe prtdaxkypywtbwvarlgepmqvr/cltrwxjsoukdz5z930zv8s0yd16kyq/dev2app success!
+[DEBUG] 2024-11-22 16:02:36 [hawtdispatch-DEFAULT-1-373] [deviceup.DeviceReportThread$1$1.onSuccess(DeviceReportThread.java:56)] The device[BB:D1:FF:00:00:0A] with mqtt subscribe prtdaxkypywtbwvarlgepmqvr/cltonkksdugmd0devjd51bx2z461pn/dev2app success!
