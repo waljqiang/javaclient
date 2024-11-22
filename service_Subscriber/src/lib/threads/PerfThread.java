@@ -78,10 +78,15 @@ public class PerfThread  extends Thread  {
 	private void parseDevice(){
 		List<Integer> waittimes = new ArrayList<Integer>();
 		for(int i=0;i<this.devices.size();i++){
-			waittimes.add((int)(Math.random()*(publicConf.report_start_time+1)/5));
+			waittimes.add((int)(Math.random()*(publicConf.report_start_time+1)));
 		}
 		Collections.sort(waittimes);
-
+System.out.println(waittimes);
+try{
+	Thread.sleep(20000);
+}catch(Exception e){
+	logger.error("failure "+e.getMessage());
+}
 		for(int i=0;i<this.devices.size();i++){
 			devices.get(i).setWaittime(waittimes.get(i));
 			devices.get(i).setReportInterval(publicConf.report_interval);
