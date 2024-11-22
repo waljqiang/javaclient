@@ -19,14 +19,16 @@ public class DeviceReportApThread extends DeviceReportThread{
 
 
 	public void run(){
-		try{
-			while(true){
-			  publishMessage();
-			  Thread.sleep(2000);
+		if(device.getWaittime() != 0){
+			try{
+				Thread.sleep(device.getWaittime() * 1000);
+			}catch(Exception e){
+				logger.error("failure "+e.getMessage());
 			}
+		}
 			
-		}catch(Exception e){
-			logger.fatal("receive message failure");
+		while(true){
+		  publishMessage();
 		}
 	}
 	
@@ -35,15 +37,6 @@ public class DeviceReportApThread extends DeviceReportThread{
 		
 		//logger.debug(device);
 		String message =  this.getMessage();
-		
-		if(device.getWaittime() != 0){
-			try{
-				Thread.sleep(device.getWaittime() * 1000);
-			}catch(Exception e){
-				logger.error("failure "+e.getMessage());
-			}
-		}
-	
 		try {
 			 Callback<Void> callback = new Callback<Void>() {
 	            @Override

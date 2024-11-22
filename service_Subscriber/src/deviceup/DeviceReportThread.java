@@ -78,9 +78,9 @@ public abstract class DeviceReportThread extends Thread{
 			}
 	
 		public void onPublish(UTF8Buffer topic, org.fusesource.hawtbuf.Buffer payload, Runnable onComplete){
-				String s_topic = topic.toString();
-				String data = new String(payload.toByteArray());
-				logger.debug("mqtt receive data[" + data + "]from topic[" + s_topic + "]");
+//				String s_topic = topic.toString();
+//				String data = new String(payload.toByteArray());
+//				logger.debug("mqtt receive data[" + data + "]from topic[" + s_topic + "]");
 			
 			}
 	

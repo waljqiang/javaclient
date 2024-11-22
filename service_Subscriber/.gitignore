@@ -1,3 +1,5 @@
+.idea
 .metadata
+.settings
 RemoteSystemsTempFiles
-service_Subscriber/log/*.log
+log/*.log
