@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Class-Path: jar/slf4j-api-1.5.2.jar jar/org.apache.commons.logging_1.1.1.v201101211721.jar jar/org.apache.log4j_1.2.15.v201012070815.jar jar/slf4j-simple-1.5.2.jar jar/Java-WebSocket-1.5.2.jar jar/commons-pool-1.6.jar jar/commons-codec-1.15.jar jar/hawtbuf-1.11.jar jar/jedis-2.1.0-new.jar jar/mysql-connector-java-5.1.7-bin.jar jar/druid-1.1.10.jar jar/fastjson-1.2.83.jar
+Main-Class: main
