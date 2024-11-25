@@ -4,5 +4,5 @@ RemoteSystemsTempFiles
 service_Subscriber/.idea
 service_Subscriber/.settings
 service_Subscriber/bin
-service_Subscriber/log
+service_Subscriber/log/*.log
 service_Subscriber/src/log4j.properties
