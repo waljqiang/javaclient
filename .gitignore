@@ -2,3 +2,4 @@
 .recommenders
 RemoteSystemsTempFiles
 service_Subscriber/log
+service_Subscriber/bin
