@@ -2,3 +2,4 @@
 .metadata
 .settings
 RemoteSystemsTempFiles
+src/log4j.properties

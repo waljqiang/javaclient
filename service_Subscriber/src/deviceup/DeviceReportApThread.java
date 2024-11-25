@@ -53,7 +53,6 @@ public class DeviceReportApThread extends DeviceReportThread{
 			};
 			
 			connection.publish(device.getPrtid() + "/" + device.getCltid() + "/dev2app", message.getBytes(), QoS.AT_LEAST_ONCE, false,callback);
-			logger.info("mqtt send message to device["+device.getIdenty()+"][" + device.getMac() + "] success");
 		} catch (Exception e) {
 			logger.error("Send message to device["+device.getMac()+"] failure,caused:"+e.getMessage());
 		}
