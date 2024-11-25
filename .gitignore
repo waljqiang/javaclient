@@ -6,4 +6,5 @@ service_Subscriber/.settings
 service_Subscriber/config.ini
 service_Subscriber/log/*.log
 service_Subscriber/log/*.log.*
+service_Subscriber/dist/config.ini
 
