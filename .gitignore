@@ -7,4 +7,5 @@ service_Subscriber/config.ini
 service_Subscriber/log/*.log
 service_Subscriber/log/*.log.*
 service_Subscriber/dist/config.ini
+service_Subscriber/src/log4j.properties
 

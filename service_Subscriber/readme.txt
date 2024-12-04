@@ -9,3 +9,6 @@ chmod 777 /etc/init.d/java_server
 /etc/init.d/java_server start
 2.停止
 /etc/init.d/java_server stop
+
+#代码克隆
+需要将log4j.dev.properties移动到src目录下，并将配置修改成自己对应的配置

@@ -41,6 +41,7 @@ public abstract class DeviceReportThread extends Thread{
 	    mqtt.setReconnectAttemptsMax(mqttConf.set_reconnect_attempts_max);
 	    mqtt.setReconnectDelay(mqttConf.set_reconnect_delay);
 	    mqtt.setReconnectDelayMax(mqttConf.set_reconnect_delay_max);
+	    mqtt.setReconnectBackOffMultiplier(mqttConf.set_reconnect_back_off_multiplier);
 	 	
 	    this.connection = mqtt.callbackConnection();
 	 	

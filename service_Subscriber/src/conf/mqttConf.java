@@ -34,6 +34,8 @@ public class mqttConf extends config{
 	public static final Integer set_reconnect_attempts_max= Integer.parseInt(config.getIni("SET_RECONNECT_ATTEMPTS_MAX","-1"));
     public static final Integer set_reconnect_delay= Integer.parseInt(config.getIni("SET_RECONNECT_DELAY","10"));
 	public static final Integer set_reconnect_delay_max= Integer.parseInt(config.getIni("SET_RECONNECT_DELAY_MAX","30000"));
+	public static final double set_reconnect_back_off_multiplier = Double.parseDouble(config.getIni("SetReconnectBackOffMultiplier", "2.0")); // 使用浮点数默认值
+
 	
 	
 }
